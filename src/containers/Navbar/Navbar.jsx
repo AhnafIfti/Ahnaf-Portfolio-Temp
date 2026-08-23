@@ -1,24 +1,25 @@
 // src/containers/Navbar/Navbar.jsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Icon from "../../components/Icon/Icon";
-import { navLinks, site } from "../../data/content";
+import { navLinks } from "../../data/content";
 import "./Navbar.css";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 8);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? "is-scrolled" : ""}`}>
       <div className="container navbar__inner">
-        <NavLink
-          to="/"
-          className="navbar__brand"
-          onClick={() => setIsOpen(false)}
-        >
-          {site.name}
-        </NavLink>
-
         <button
           type="button"
           className="navbar__toggle"

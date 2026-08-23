@@ -1,16 +1,12 @@
+// src/components/ProjectCard/ProjectCard.jsx
 import Icon from "../Icon/Icon";
 import "./ProjectCard.css";
 
 export default function ProjectCard({ project }) {
-  const { title, description, tech, image, links } = project;
-  const imageUrl = new URL(`../../assets/images/${image}`, import.meta.url)
-    .href;
+  const { title, description, tech, links } = project;
 
   return (
     <article className="project-card">
-      <div className="project-card__thumb">
-        <img src={imageUrl} alt={title} loading="lazy" />
-      </div>
       <div className="project-card__body">
         <h3 className="project-card__title">{title}</h3>
         <p className="project-card__desc">{description}</p>

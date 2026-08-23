@@ -1,0 +1,90 @@
+.about-summary {
+  padding: var(--space-xl) 0;
+  padding-bottom: var(--space-md);
+}
+
+.about-summary__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+/* Photo container controls the DISPLAY size — the source image itself
+   stays untouched. Adjust max-width here to resize, or object-position
+   below to reframe, without ever re-cropping the file. */
+.about-summary__photo {
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.about-summary__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+/* --- Circular variant: add className="about-summary__photo--circle"
+   alongside "about-summary__photo" in AboutSummary.jsx to use this --- */
+.about-summary__photo--circle {
+  max-width: 220px;
+}
+
+.about-summary__photo--circle img {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-position: 50% 25%;
+}
+
+.about-summary__text h2 {
+  font-size: var(--font-size-h2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-md);
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.about-summary__text h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: var(--radius-pill);
+}
+
+.about-summary__text p {
+  color: var(--color-text-muted);
+}
+
+/* Responsive: stack photo above text on tablets/phones instead of
+   side-by-side, and center the heading underline */
+@media (max-width: 800px) {
+  .about-summary__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-summary__photo,
+  .about-summary__photo--circle {
+    margin: 0 auto;
+    max-width: 240px;
+  }
+
+  .about-summary__text h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 576px) {
+  .about-summary {
+    padding: var(--space-lg) 0;
+  }
+}

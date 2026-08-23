@@ -1,0 +1,32 @@
+.rotating-text {
+  display: inline-block;
+  overflow: hidden;
+  height: 1.4em;
+  vertical-align: bottom;
+  position: relative;
+}
+
+.rotating-text__item {
+  display: block;
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+  animation: rotating-text-slide-up 0.3s ease;
+}
+
+@keyframes rotating-text-slide-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Respect users who've asked their OS/browser to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .rotating-text__item {
+    animation: none;
+  }
+}
