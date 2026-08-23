@@ -1,0 +1,47 @@
+.expertise-card {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-card);
+  height: 100%;
+  transition: var(--transition-base);
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.expertise-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-bg-elevated);
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.expertise-card h3 {
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--space-sm);
+}
+
+.expertise-card p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Responsive: slightly smaller icon badge and tighter padding on phones */
+@media (max-width: 576px) {
+  .expertise-card {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .expertise-card__icon {
+    width: 52px;
+    height: 52px;
+  }
+}

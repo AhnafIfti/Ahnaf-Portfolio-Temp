@@ -1,0 +1,21 @@
+/* Shared spacing wrapper used by every route page (except Home, which
+   has its own full-height hero styling). Keeps consistent vertical
+   rhythm across Projects, Experience, Education, etc. without repeating
+   these rules in every page's CSS file. */
+.page-section {
+  padding: var(--space-2xl) 0;
+}
+
+.page-section--tight {
+  padding: var(--space-xl) 0;
+}
+
+@media (max-width: 576px) {
+  .page-section {
+    padding: var(--space-xl) 0;
+  }
+
+  .page-section--tight {
+    padding: var(--space-lg) 0;
+  }
+}

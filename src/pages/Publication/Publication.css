@@ -1,0 +1,28 @@
+.publication-item {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-lg);
+}
+
+.publication-item h3 {
+  font-size: var(--font-size-h3);
+  margin-bottom: 0.4rem;
+}
+
+.publication-item p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.publication-item a {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Responsive: tighten spacing between multiple publication entries
+   on phones */
+@media (max-width: 576px) {
+  .publication-item {
+    margin-bottom: var(--space-md);
+  }
+}

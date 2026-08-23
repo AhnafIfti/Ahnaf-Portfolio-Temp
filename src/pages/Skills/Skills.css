@@ -1,0 +1,13 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+/* Responsive: single column on phones */
+@media (max-width: 576px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+}

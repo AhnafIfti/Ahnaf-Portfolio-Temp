@@ -1,0 +1,65 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.02em;
+  transition: var(--transition-base);
+  text-align: center;
+}
+
+.btn-sm {
+  padding: 0.55rem 1.5rem;
+  font-size: var(--font-size-sm);
+}
+
+.btn-md {
+  padding: 0.75rem 2rem;
+  font-size: var(--font-size-base);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background: var(--color-accent-dark);
+  color: var(--color-text-on-accent);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Responsive: shrink padding slightly on very small screens so buttons
+   don't feel oversized next to compact mobile layouts. */
+@media (max-width: 576px) {
+  .btn-md {
+    padding: 0.65rem 1.5rem;
+  }
+}

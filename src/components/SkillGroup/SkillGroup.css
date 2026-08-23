@@ -1,0 +1,46 @@
+.skill-group {
+  background: var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  height: 100%;
+}
+
+.skill-group h3 {
+  text-align: center;
+  color: var(--color-text-on-accent);
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--space-md);
+}
+
+.skill-group__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.skill-group__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.skill-group__item img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.skill-group__item span {
+  font-size: 0.7rem;
+  color: var(--color-text-on-accent);
+  text-align: center;
+}
+
+/* Responsive: drop to 2 columns on small phones so icons + labels
+   don't get cramped */
+@media (max-width: 400px) {
+  .skill-group__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

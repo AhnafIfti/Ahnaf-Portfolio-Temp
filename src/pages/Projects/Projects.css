@@ -1,0 +1,18 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.projects-cta {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+/* Responsive: on phones, drop to a single column and tighten the gap */
+@media (max-width: 576px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+}
