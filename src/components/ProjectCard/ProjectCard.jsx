@@ -1,5 +1,7 @@
 // src/components/ProjectCard/ProjectCard.jsx
 import Icon from "../Icon/Icon";
+import { techIcons } from "../../data/techIcons";
+import { getIconUrl } from "../../utils/iconLoader";
 import "./ProjectCard.css";
 
 export default function ProjectCard({ project }) {
@@ -12,9 +14,33 @@ export default function ProjectCard({ project }) {
         <p className="project-card__desc">{description}</p>
         {tech?.length > 0 && (
           <ul className="project-card__tech">
-            {tech.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
+            {tech.map((t) => {
+              const iconPath = techIcons[t];
+              const iconUrl = iconPath ? getIconUrl(iconPath) : null;
+
+              if (!iconUrl) {
+                return (
+                  <li key={t} aria-label={t}>
+                    {t}
+                  </li>
+                );
+              }
+
+              return (
+                <li
+                  key={t}
+                  className="project-card__tech-item--icon"
+                  aria-label={t}
+                >
+                  <img
+                    src={iconUrl}
+                    alt=""
+                    className="project-card__tech-icon"
+                  />
+                  <span className="project-card__tech-tooltip">{t}</span>
+                </li>
+              );
+            })}
           </ul>
         )}
         {links?.length > 0 && (

@@ -1,11 +1,3 @@
-// src/data/content.js
-
-/*
-  CONTENT — single source of truth for everything the site displays.
-  Edit this file to change copy, links, projects, experience, etc.
-  Components/pages import from here rather than hardcoding text.
-*/
-
 export const site = {
   name: "Ahnaf Shahriar Ifti",
   title: "Software Developer",
@@ -63,7 +55,7 @@ export const projects = [
     category: "machine_learning",
     links: [
       {
-        label: "Read Paper",
+        label: "View Repository",
         href: "https://ieeexplore.ieee.org/document/9707392",
       },
     ],
@@ -76,7 +68,12 @@ export const projects = [
     tech: ["Python", "Machine Learning"],
     image: "p2.png",
     category: "machine_learning",
-    links: [],
+    links: [
+      {
+        label: "View Repository",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+    ],
   },
   {
     id: "p3",
@@ -86,7 +83,12 @@ export const projects = [
     tech: ["React.js", ".NET", "PowerShell"],
     image: "p3.png",
     category: "website",
-    links: [],
+    links: [
+      {
+        label: "View Repository",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+    ],
   },
   {
     id: "p4",
@@ -96,7 +98,12 @@ export const projects = [
     tech: ["FastAPI", "React", "Keycloak"],
     image: "p4.png",
     category: "website",
-    links: [],
+    links: [
+      {
+        label: "View Repository",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+    ],
   },
   {
     id: "p5",
@@ -106,7 +113,12 @@ export const projects = [
     tech: ["React", "REST API"],
     image: "p5.png",
     category: "website",
-    links: [],
+    links: [
+      {
+        label: "View Repository",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+    ],
   },
   {
     id: "p6",
@@ -116,7 +128,12 @@ export const projects = [
     tech: [".NET", "MVC5"],
     image: "p6.png",
     category: "website",
-    links: [],
+    links: [
+      {
+        label: "View Repository",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+    ],
   },
   {
     id: "p7",
@@ -126,7 +143,12 @@ export const projects = [
     tech: ["FastAPI", "Python", "React"],
     image: "p7.png",
     category: "website",
-    links: [],
+    links: [
+      {
+        label: "View Repository",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+    ],
   },
   {
     id: "p8",
@@ -161,24 +183,30 @@ export const experience = [
     date: "November 2022 - Present",
     company: "CodeExcel Bangladesh",
     role: "Software Developer",
+    location: "Dhaka, Bangladesh",
     description:
       "Played a pivotal role in managing and delivering a substantial North American project with millions of driver records, ensuring timely delivery and seamless integration of essential features. Demonstrated proficiency in React.js, .Net, and PowerShell scripting, collaborating closely with stakeholders to achieve project objectives with excellence.",
+    logo: "codeexcel.png",
   },
   {
     id: "exp2",
     date: "March 2022 - November 2022",
     company: "ADN DigiNet",
     role: "Software Engineer",
+    location: "Dhaka, Bangladesh",
     description:
       "Contributed to an integrated software solution with sales, marketing, customer service, and operations. Utilized FastAPI and React for robust functionalities. Key contributions: developed essential features, secured password updating with Keycloak, improved platform responsiveness and design, designed scalable frontend architecture, and proactively resolved bugs for stability and performance.",
+    logo: "codeexcel.png",
   },
   {
     id: "exp3",
     date: "December 2021 - March 2022",
     company: "ADN DigiNet",
     role: "Intern",
+    location: "Dhaka, Bangladesh",
     description:
-      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
+      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
+    logo: "codeexcel.png",
   },
 ];
 
@@ -186,23 +214,44 @@ export const education = [
   {
     id: "edu1",
     date: "January 2021",
-    title: "BSc in Computer Science and Engineering",
+    title: "Master of Computing",
+    subtitle: "Computer Science and Engineering",
     institution: "Ahsanullah University of Science and Technology",
-    detail: "CGPA: 2.828/4.00",
+    location: "Dhaka, Bangladesh",
+    detail:
+      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
+    logo: "codeexcel.png",
   },
   {
     id: "edu2",
-    date: "August 2015",
-    title: "Higher Secondary Certificate",
-    institution: "Dhaka City College",
-    detail: "GPA: 5.00/5.00",
+    date: "January 2021",
+    title: "Bachelor of Science",
+    subtitle: "Computer Science and Engineering",
+    institution: "Ahsanullah University of Science and Technology",
+    location: "Dhaka, Bangladesh",
+    detail:
+      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
+    logo: "codeexcel.png",
   },
   {
     id: "edu3",
+    date: "August 2015",
+    title: "Higher Secondary Certificate",
+    institution: "Dhaka City College",
+    location: "Dhaka, Bangladesh",
+    detail:
+      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
+    logo: "codeexcel.png",
+  },
+  {
+    id: "edu4",
     date: "May 2013",
     title: "Secondary School Certificate",
     institution: "St. Joseph Higher Secondary School",
-    detail: "GPA: 5.00/5.00",
+    location: "Dhaka, Bangladesh",
+    detail:
+      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
+    logo: "codeexcel.png",
   },
 ];
 
@@ -244,36 +293,36 @@ export const skillGroups = [
     id: "languages",
     title: "Programming Languages",
     items: [
-      { name: "C#", icon: "languages/cSharp.png" },
-      { name: "Python", icon: "languages/python.png" },
-      { name: "C++", icon: "languages/cpp.png" },
-      { name: "JavaScript", icon: "languages/js.png" },
-      { name: "TypeScript", icon: "languages/ts.png" },
-      { name: "HTML", icon: "languages/html.png" },
+      { name: "C#", icon: "Languages/cSharp.png" },
+      { name: "Python", icon: "Languages/python.png" },
+      { name: "C++", icon: "Languages/cpp.png" },
+      { name: "JavaScript", icon: "Languages/js.png" },
+      { name: "TypeScript", icon: "Languages/ts.png" },
+      { name: "HTML", icon: "Languages/html.png" },
     ],
   },
   {
     id: "frameworks",
     title: "Frameworks",
     items: [
-      { name: "React", icon: "frameworks/react.png" },
-      { name: "Redux", icon: "frameworks/redux.png" },
-      { name: "Next.js", icon: "frameworks/next.png" },
-      { name: "FastAPI", icon: "frameworks/fastapi.png" },
-      { name: ".NET Core", icon: "frameworks/dotNetCore.png" },
-      { name: "Django", icon: "frameworks/django.png" },
+      { name: "React", icon: "framework/react.png" },
+      { name: "Redux", icon: "framework/redux.png" },
+      { name: "Next.js", icon: "framework/next.png" },
+      { name: "FastAPI", icon: "framework/fastapi.png" },
+      { name: ".NET Core", icon: "framework/dotNetCore.png" },
+      { name: "Django", icon: "framework/django.png" },
     ],
   },
   {
     id: "tools",
     title: "Tools",
     items: [
-      { name: "Git", icon: "tools/git.png" },
-      { name: "Docker", icon: "tools/docker.png" },
-      { name: "MS Office", icon: "tools/msOffice.png" },
-      { name: "Visual Studio", icon: "tools/vs.png" },
-      { name: "VS Code", icon: "tools/vsc.png" },
-      { name: "MS SQL Server", icon: "tools/mssqlserver.png" },
+      { name: "Git", icon: "Tools/git.png" },
+      { name: "Docker", icon: "Tools/docker.png" },
+      { name: "MS Office", icon: "Tools/msOffice.png" },
+      { name: "Visual Studio", icon: "Tools/vs.png" },
+      { name: "VS Code", icon: "Tools/vsc.png" },
+      { name: "MS SQL Server", icon: "Tools/mssqlserver.png" },
     ],
   },
 ];

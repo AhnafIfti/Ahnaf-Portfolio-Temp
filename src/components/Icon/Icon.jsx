@@ -23,6 +23,8 @@ const paths = {
   close:
     "M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7 4.3 4.3l6.3 6.3 6.3-6.3z",
   menu: "M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z",
+  building:
+    "M5 21V3h14v18h-6v-5h-2v5H5zm2-2h2v-2H7v2zm0-4h2v-2H7v2zm0-4h2V9H7v2zm0-4h2V5H7v2zm4 8h2v-2h-2v2zm0-4h2V9h-2v2zm0-4h2V5h-2v2zm4 8h2v-2h-2v2zm0-4h2V9h-2v2zm0-4h2V5h-2v2z",
 };
 
 export default function Icon({ name, size = 20, className = "", title }) {
