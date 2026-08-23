@@ -1,0 +1,44 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-details li {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  color: var(--color-accent);
+}
+
+.contact-details__label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+  margin-bottom: 0.2rem;
+}
+
+.contact-details a,
+.contact-details span:not(.contact-details__label) {
+  color: var(--color-text-muted);
+}
+
+/* Responsive: stack the form above the details panel on tablets/phones
+   instead of side-by-side */
+@media (max-width: 800px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}
