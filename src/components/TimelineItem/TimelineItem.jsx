@@ -9,6 +9,9 @@ export default function TimelineItem({
   description,
   logo,
   location,
+  subtitle2,
+  semititle,
+  department,
 }) {
   return (
     <div className="timeline-item">
@@ -28,8 +31,11 @@ export default function TimelineItem({
           </span>
         )}
         <h3 className="timeline-item__title">{title}</h3>
+        {semititle && <p className="timeline-item__subtitle">{semititle}</p>}
         {subtitle && <p className="timeline-item__subtitle">{subtitle}</p>}
+        {department && <p className="timeline-item__subtitle">{department}</p>}
         {location && <p className="timeline-item__desc">{location}</p>}
+        {subtitle2 && <p className="timeline-item__desc">{subtitle2}</p>}
         {description && <p className="timeline-item__desc">{description}</p>}
       </div>
     </div>

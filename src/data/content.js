@@ -1,10 +1,14 @@
 export const site = {
   name: "Ahnaf Shahriar Ifti",
-  title: "Software Developer",
+  // title: "Software Developer",
+  // tagline:
+  //   "Dedicated and results-driven Full-stack Developer with a track record of delivering high-quality software solutions. With extensive experience in React.JS, Next.JS, FastAPI, and .Net technologies, I have successfully contributed to the development of robust applications across multiple platforms. From my internship to my current role, I have consistently demonstrated my ability to thrive in fast-paced environments, delivering exceptional results while meeting tight deadlines. My focus is on delivering tangible results and maintaining a commitment to excellence, making me an asset to any development endeavor. Passionate about continuous learning and growth, I am eager to leverage my skills and expertise to drive innovation and success for your organization.",
   tagline:
-    "Dedicated and results-driven Full-stack Developer with a track record of delivering high-quality software solutions. With extensive experience in React.JS, Next.JS, FastAPI, and .Net technologies, I have successfully contributed to the development of robust applications across multiple platforms. From my internship to my current role, I have consistently demonstrated my ability to thrive in fast-paced environments, delivering exceptional results while meeting tight deadlines. My focus is on delivering tangible results and maintaining a commitment to excellence, making me an asset to any development endeavor. Passionate about continuous learning and growth, I am eager to leverage my skills and expertise to drive innovation and success for your organization.",
+    "Full-stack developer and ML researcher with 2.5+ years of experience building software for companies in Bangladesh and Canada. I build web apps with React, Next.js, .NET and FastAPI, train deep learning models for medical imaging, and set up secure CI/CD pipelines with Docker and Jenkins. I recently completed my Master of Computing at Curtin University.",
   resumeUrl:
-    "https://drive.google.com/file/d/1-U74t9kcN2PAgCfGg6T7_qrrEdYnEuHx/view?usp=drive_link",
+    "https://drive.google.com/file/d/1SZKeLupboWU5X--_7l5H9DoIJVGcG8d3/view?usp=sharing",
+  whatIDo:
+    "I work across three areas: building software, AI research, and shipping code safely. As a developer, I built insurance platforms for the Insurance Bureau of Canada and an AI-driven business platform ADN DigiNet in Bangladesh, using React, Next.js, .NET and FastAPI. As a researcher, I published a deep learning paper at IEEE TENCON 2021. For my Master's thesis, I built a 3D brain tumour segmentation model and brought it into a working web platform with 3D tumour views. On the DevOps side, I build CI/CD pipelines with Docker, Jenkins and GitLab that test, scan and deploy code automatically. I am open to software engineering roles and PhD opportunities in medical image analysis, computer vision and explainable AI.",
 };
 
 export const socialLinks = [
@@ -41,227 +45,408 @@ export const projectCategories = [
   { key: "all", label: "All" },
   { key: "machine_learning", label: "Machine Learning" },
   { key: "website", label: "Web Site" },
-  { key: "app", label: "App" },
+  // { key: "app", label: "App" },
+  { key: "devops", label: "DevOps" },
 ];
 
 export const projects = [
+  // ---------------- Machine Learning ----------------
   {
     id: "p1",
-    title: "Cricket Activity Detection",
+    title: "NeuroVision AI",
     description:
-      "A deep learning system that detects and classifies cricketing activities from video frames, built as part of published research.",
-    tech: ["Python", "Deep Learning", "OpenCV"],
-    image: "p1.png",
-    category: "machine_learning",
+      "Built 3D deep learning models that segment brain tumours in MRI (mean Dice 0.92), and the Django web platform that runs them, with slice-by-slice views and PDF reports.",
+    tech: ["Python", "PyTorch", "Django", "PostgreSQL", "Docker"],
+    category: ["machine_learning", "website"],
     links: [
       {
         label: "View Repository",
-        href: "https://ieeexplore.ieee.org/document/9707392",
+        href: "https://github.com/AhnafIfti/Web-Platform-for-Brain-Tumor-Detection-and-Predictive-Outcome-Modeling",
       },
     ],
   },
   {
     id: "p2",
-    title: "Facial Recognition System",
+    title: "Cricket Activity Detection",
     description:
-      "A facial recognition pipeline focused on high accuracy and efficiency, applied to real-world identification scenarios.",
-    tech: ["Python", "Machine Learning"],
-    image: "p2.png",
+      "Custom ResNet50 trained with the One Cycle Policy that classifies cricket shots from images with 99.47% test accuracy. Published at IEEE TENCON 2021.",
+    tech: ["Python", "OpenCV", "PyTorch"],
     category: "machine_learning",
     links: [
       {
         label: "View Repository",
+        href: "https://github.com/AhnafIfti/Detection-of-Cricketing-Activities-using-Deep-Learning",
+      },
+      {
+        label: "Read Paper",
         href: "https://ieeexplore.ieee.org/document/9707392",
       },
     ],
   },
   {
     id: "p3",
-    title: "North American Driver Records Platform",
+    title: "Fetal Health Classification",
     description:
-      "A large-scale platform managing millions of driver records, with seamless integration of essential business features.",
-    tech: ["React.js", ".NET", "PowerShell"],
-    image: "p3.png",
-    category: "website",
+      "Finds at-risk pregnancies from imbalanced CTG data. XGBoost caught 33 of 35 pathological cases, and SHAP explains each prediction.",
+    tech: ["Python", "scikit-learn", "XGBoost", "SHAP"],
+    category: "machine_learning",
     links: [
       {
         label: "View Repository",
-        href: "https://ieeexplore.ieee.org/document/9707392",
+        href: "https://github.com/AhnafIfti/fetal-health-classification",
       },
     ],
   },
   {
     id: "p4",
-    title: "Sales & Operations Portal",
+    title: "Parkinson's Severity from Voice",
     description:
-      "An integrated software solution spanning sales, marketing, customer service, and operations with secure authentication.",
-    tech: ["FastAPI", "React", "Keycloak"],
-    image: "p4.png",
-    category: "website",
+      "Predicts Parkinson's severity for patients the model has never seen. SHAP, PDP and ALE showed why the models failed to generalise.",
+    tech: ["Python", "scikit-learn", "XGBoost", "SHAP"],
+    category: "machine_learning",
     links: [
       {
         label: "View Repository",
-        href: "https://ieeexplore.ieee.org/document/9707392",
+        href: "https://github.com/AhnafIfti/parkinsons-severity-xai",
       },
     ],
   },
+
+  // ---------------- DevOps ----------------
   {
     id: "p5",
-    title: "Responsive Web Application",
+    title: "Secure Jenkins CI/CD Pipeline",
     description:
-      "A responsive frontend built from raw design with secure backend access, following RESTful principles for scalability.",
-    tech: ["React", "REST API"],
-    image: "p5.png",
-    category: "website",
+      "Node.js pipeline that runs unit tests, blocks High and Critical issues with a Snyk security gate, then builds and pushes a versioned Docker image.",
+    tech: ["Jenkins", "Docker", "Snyk", "Node.js"],
+    category: "devops",
     links: [
       {
         label: "View Repository",
-        href: "https://ieeexplore.ieee.org/document/9707392",
+        href: "https://github.com/AhnafIfti/aws-elastic-beanstalk-express-js-sample",
       },
     ],
   },
   {
     id: "p6",
-    title: "MVC5 Web Backend",
+    title: "Hardened Jenkins + Docker-in-Docker",
     description:
-      "An application backend built on MVC5 with raw coding for fine-grained control over business logic and data flow.",
-    tech: [".NET", "MVC5"],
-    image: "p6.png",
-    category: "website",
+      "Docker Compose setup for a locked-down CI server, with Jenkins talking to its own Docker daemon over TLS.",
+    tech: ["Docker", "Docker Compose", "Jenkins"],
+    category: "devops",
     links: [
       {
         label: "View Repository",
-        href: "https://ieeexplore.ieee.org/document/9707392",
+        href: "https://github.com/AhnafIfti/isec6000-a2-jenkins-compose",
       },
     ],
   },
   {
     id: "p7",
-    title: "FastAPI Web Application",
+    title: "GitLab CI/CD Pipeline",
     description:
-      "A web application built during an internship using FastAPI for the backend and a dynamic React frontend.",
-    tech: ["FastAPI", "Python", "React"],
-    image: "p7.png",
+      "GitLab CI/CD pipeline that automatically builds and tests a Python application on every push.",
+    tech: ["GitLab CI/CD", "Python", "Docker"],
+    category: "devops",
+    links: [
+      {
+        label: "View Repository",
+        href: "https://gitlab.com/Ahnaf.Ifti/isec6000-assessment-1",
+      },
+    ],
+  },
+
+  // ---------------- Web Development ----------------
+  {
+    id: "p8",
+    title: "BlogStack – Full-Stack Blog App",
+    description:
+      "A blogging app with Google login, tags, search and author subscriptions. React frontend (BlogStack) with an Express and MongoDB API (BloggerIt).",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    category: "website",
+    links: [
+      { label: "Frontend", href: "https://github.com/AhnafIfti/BlogStack" },
+      { label: "Backend", href: "https://github.com/AhnafIfti/BloggerIt" },
+    ],
+  },
+  {
+    id: "p9",
+    title: "Student Task Deadline Tracker",
+    description:
+      "Helps students manage courses, tasks and deadlines, with login and live updates.",
+    tech: ["React", "TypeScript", "MUI", "Express", "MongoDB", "Socket.io"],
     category: "website",
     links: [
       {
         label: "View Repository",
-        href: "https://ieeexplore.ieee.org/document/9707392",
+        href: "https://github.com/AhnafIfti/Student-Task-Deadline-Tracker",
       },
     ],
   },
   {
-    id: "p8",
-    title: "Frontend Redesign Project",
+    id: "p10",
+    title: "ePaper",
     description:
-      "A frontend enhancement project focused on improving responsiveness, design consistency, and usability.",
-    tech: ["React", "CSS"],
-    image: "p8.png",
+      "News reader inspired by The New York Times, showing the most viewed, shared and emailed articles from the NYT API.",
+    tech: ["React", "TypeScript", "Redux"],
     category: "website",
-    links: [],
+    links: [
+      { label: "View Repository", href: "https://github.com/AhnafIfti/ePaper" },
+    ],
   },
   {
-    id: "p9",
-    title: "More on GitHub",
+    id: "p11",
+    title: "BlogIt – FastAPI Blog API",
     description:
-      "Additional apps and experiments — browse the full list of repositories on GitHub.",
-    tech: ["Various"],
-    image: "p9.png",
-    category: "app",
+      "Blog backend with user management, image uploads and JWT login for admins, plus simple HTML pages for browsing posts.",
+    tech: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy"],
+    category: "website",
+    links: [
+      { label: "View Repository", href: "https://github.com/AhnafIfti/BlogIt" },
+    ],
+  },
+  {
+    id: "p12",
+    title: "PAATHSHALA – Student Q&A Platform",
+    description:
+      "A Q&A website for Bangladeshi students. Users answer each other's questions and earn ranks and tags as they help. Built twice, in ASP.NET MVC5 and in PHP.",
+    tech: ["C#", "ASP.NET MVC5", "Entity Framework", "PHP", "MySQL"],
+    category: "website",
     links: [
       {
-        label: "View Repositories",
-        href: "https://github.com/AhnafIfti?tab=repositories",
+        label: "ASP.NET Version",
+        href: "https://github.com/AhnafIfti/PAATHSHALA_ASP.NET_MVC5",
+      },
+      {
+        label: "PHP Version",
+        href: "https://github.com/AhnafIfti/PAATHSHALA_PHP",
       },
     ],
+  },
+];
+
+// Professional projects (team work at companies, private code)
+export const professionalProjects = [
+  {
+    id: "pro1",
+    company: "CodeExcel · Insurance Bureau of Canada",
+    dates: "Dec 2022 – Jun 2024",
+    title: "DASH – Driver and Automobile Search History",
+    role: "Frontend",
+    description:
+      "Industry-owned system that retrieves driver and auto insurance history (policies and claims) used to give insurance quotes.",
+    stack: ["React", "TypeScript", "Redux", "MUI", "Node.js"],
+  },
+  {
+    id: "pro2",
+    company: "CodeExcel · Insurance Bureau of Canada",
+    dates: "Jun 2023 – Mar 2024",
+    title: "Secret Management Portal",
+    role: "Full stack",
+    description:
+      "One place to manage app secrets spread across many Azure directories, with role-based access, secret rotation and expiry alerts.",
+    stack: [
+      "React",
+      "TypeScript",
+      "Redux",
+      "MUI",
+      ".NET Core",
+      "MS SQL Server",
+    ],
+  },
+  {
+    id: "pro3",
+    company: "CodeExcel · Insurance Bureau of Canada",
+    dates: "Sep 2023 – Mar 2024",
+    title: "Insurance Bureau of Canada Website",
+    role: "Frontend",
+    description:
+      "SEO-focused website with a headless CMS and serverless functions that talk to secure in-house APIs.",
+    stack: ["Next.js", "React", "Tailwind", "Storyblok", "Algolia"],
+  },
+  {
+    id: "pro4",
+    company: "ADN DigiNet",
+    dates: "Feb 2022 – Nov 2022",
+    title: "Roboket",
+    role: "Full stack",
+    description:
+      "AI-driven platform that automates sales, marketing and customer service for growing businesses.",
+    stack: ["React", "TypeScript", "Redux", "FastAPI", "Node.js", "Docker"],
   },
 ];
 
 export const experience = [
   {
     id: "exp1",
-    date: "November 2022 - Present",
     company: "CodeExcel Bangladesh",
-    role: "Software Developer",
-    location: "Dhaka, Bangladesh",
-    description:
-      "Played a pivotal role in managing and delivering a substantial North American project with millions of driver records, ensuring timely delivery and seamless integration of essential features. Demonstrated proficiency in React.js, .Net, and PowerShell scripting, collaborating closely with stakeholders to achieve project objectives with excellence.",
     logo: "codeexcel.png",
+    location: "Ontario, Canada (Remote)",
+    subtitle: "Client: Insurance Bureau of Canada",
+    dates: "Nov 2022 – Jun 2024",
+    projects: ["DASH", "Secret Management Portal", "IBC Website"],
+    roles: [
+      {
+        title: "Software Developer",
+        department:
+          "Technical Infrastructure & IT Security, Technology Services",
+        dates: "Nov 2022 – Jun 2024",
+        points: [
+          "Built frontend features with React and TypeScript for DASH, an insurance history system with millions of driver records used across the Canadian insurance industry, and helped deliver it on time.",
+          "Worked full stack on a Secret Management Portal (React, .NET Core, SQL Server) that manages app secrets across Azure directories, with role-based access, rotation and expiry alerts.",
+          "Helped build the Insurance Bureau of Canada website with Next.js, Storyblok and Algolia.",
+          "Wrote PowerShell scripts to apply data retention policies.",
+          "Worked closely with project managers, team leads and stakeholders across the development lifecycle.",
+        ],
+      },
+    ],
+    stack: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      ".NET Core",
+      "MS SQL Server",
+      "Azure",
+      "PowerShell",
+    ],
   },
   {
     id: "exp2",
-    date: "March 2022 - November 2022",
     company: "ADN DigiNet",
-    role: "Software Engineer",
+    logo: "adndiginet.png",
     location: "Dhaka, Bangladesh",
-    description:
-      "Contributed to an integrated software solution with sales, marketing, customer service, and operations. Utilized FastAPI and React for robust functionalities. Key contributions: developed essential features, secured password updating with Keycloak, improved platform responsiveness and design, designed scalable frontend architecture, and proactively resolved bugs for stability and performance.",
-    logo: "codeexcel.png",
-  },
-  {
-    id: "exp3",
-    date: "December 2021 - March 2022",
-    company: "ADN DigiNet",
-    role: "Intern",
-    location: "Dhaka, Bangladesh",
-    description:
-      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
-    logo: "codeexcel.png",
+    dates: "Dec 2021 – Nov 2022",
+    projects: ["Roboket"],
+    roles: [
+      {
+        title: "Software Engineer",
+        dates: "Mar 2022 – Nov 2022",
+        points: [
+          "Worked on Roboket, an AI-driven platform for sales, marketing, customer service and operations.",
+          "Designed a scalable React frontend and built key features that improved speed and responsiveness.",
+          "Built API features with FastAPI and added secure password management with Keycloak.",
+          "Found and fixed bugs to make the platform more stable.",
+        ],
+      },
+      {
+        title: "Software Engineering Intern",
+        dates: "Dec 2021 – Mar 2022",
+        points: [
+          "Built a web application with FastAPI and React during a three-month internship.",
+          "Added and updated API endpoints and improved frontend designs, which led to a full-time role.",
+        ],
+      },
+    ],
+    stack: ["React", "TypeScript", "Redux", "FastAPI", "Keycloak", "Docker"],
   },
 ];
 
 export const education = [
   {
     id: "edu1",
-    date: "January 2021",
-    title: "Master of Computing",
-    subtitle: "Computer Science and Engineering",
-    institution: "Ahsanullah University of Science and Technology",
-    location: "Dhaka, Bangladesh",
-    detail:
-      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
-    logo: "codeexcel.png",
+    level: "Master's",
+    degree: "Master of Computing",
+    major: "Major in Computer Science",
+    department:
+      "School of Electrical Engineering, Computing and Mathematical Sciences",
+    institution: "Curtin University",
+    location: "Perth, Western Australia",
+    dates: "Feb 2025 – Nov 2026",
+    logo: "curtin.png",
+    // grade: { label: "WAM", value: "YOUR WAM" },
+    thesis: {
+      title:
+        "Web Platform for Brain Tumour Segmentation and Predictive Outcome Modelling",
+      supervisor: "Dr Chayan Mondal",
+      result:
+        "3D nnU-Net with a mean validation Dice of 0.92, integrated into the NeuroVision AI platform.",
+      link: "/publications",
+    },
   },
   {
     id: "edu2",
-    date: "January 2021",
-    title: "Bachelor of Science",
-    subtitle: "Computer Science and Engineering",
+    level: "Bachelor's",
+    degree: "Bachelor of Science",
+    major: "Computer Science and Engineering",
     institution: "Ahsanullah University of Science and Technology",
     location: "Dhaka, Bangladesh",
-    detail:
-      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
-    logo: "codeexcel.png",
-  },
-  {
-    id: "edu3",
-    date: "August 2015",
-    title: "Higher Secondary Certificate",
-    institution: "Dhaka City College",
-    location: "Dhaka, Bangladesh",
-    detail:
-      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
-    logo: "codeexcel.png",
-  },
-  {
-    id: "edu4",
-    date: "May 2013",
-    title: "Secondary School Certificate",
-    institution: "St. Joseph Higher Secondary School",
-    location: "Dhaka, Bangladesh",
-    detail:
-      "During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role. During a three-month internship, developed a challenging web application project using FastAPI Python and dynamic frontend technologies. Successfully completed tasks, updating endpoints and enhancing frontend designs with React.JS. Demonstrated proficiency, leading to a smooth transition into a full-time role.",
-    logo: "codeexcel.png",
+    dates: "Apr 2016 – Jan 2021",
+    logo: "aust.png",
+    // grade: { label: "CGPA", value: "YOUR CGPA" },
+    thesis: {
+      title: "Detection of Cricketing Activities using Deep Learning",
+      supervisor: "Shoeb Mohammad Shahriar",
+      result:
+        "Custom ResNet50 with 99.47% test accuracy, published at IEEE TENCON 2021.",
+      link: "/publications",
+    },
   },
 ];
 
 export const publications = [
   {
     id: "pub1",
+    badge: "Conference Paper",
     title: "Detection of Cricketing Activities using Deep Learning",
-    venue: "TENCON 2021 IEEE Region 10 Conference, 2021",
-    href: "https://ieeexplore.ieee.org/document/9707392",
-    date: "May 2013",
+    label: "Authors",
+    value: [
+      { name: "Co-author One" },
+      { name: "Ahnaf Shahriar Ifti", me: true },
+      { name: "Co-author Two" },
+    ],
+    meta: [
+      { label: "Venue", value: "TENCON 2021 – IEEE Region 10 Conference" },
+      { label: "Year", value: "2021" },
+      {
+        label: "Authors",
+        value: [
+          { name: "Ahnaf Shahriar Ifti", me: true },
+          { name: "Shoeb Mohammad Shahriar" },
+          { name: "Miftaul Mannan" },
+          { name: "Enamul Haque" },
+          { name: "Mahmudur Rahman" },
+        ],
+      },
+    ],
+    summary:
+      "A deep learning approach that classifies cricket activities from images. A custom ResNet50 trained with the One Cycle Policy reached 99.47% test accuracy and outperformed four other CNNs.",
+    stats: [
+      { value: "99.47%", label: "Test accuracy" },
+      { value: "5", label: "CNN models compared" },
+      { value: "5", label: "Cites in Papers" },
+      { value: "IEEE", label: "Tencon 2021" },
+    ],
+    methods: ["Image Classification", "ResNet50", "fastai", "PyTorch"],
+    links: [
+      {
+        label: "Read Paper",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+      {
+        label: "View Code",
+        href: "https://github.com/AhnafIfti/Detection-of-Cricketing-Activities-using-Deep-Learning",
+      },
+    ],
+  },
+  {
+    id: "pub2",
+    badge: "In Preparation",
+    badgeOutline: true,
+    title: "TBD",
+    meta: [
+      { label: "Status", value: "Manuscript in preparation" },
+      { label: "Target venue", value: "TBD" },
+      {
+        label: "Authors",
+        value: [
+          { name: "Ahnaf Shahriar Ifti", me: true },
+          { name: "Chayan Mondal" },
+        ],
+      },
+    ],
+    summary:
+      "A 3D nnU-Net approach to brain tumour segmentation in multi-modal MRI, using an ablation study to choose the final model settings.",
+    methods: ["Medical Image Segmentation", "nnU-Net", "BraTS"],
   },
 ];
 
@@ -271,55 +456,75 @@ export const expertise = [
     icon: "browser",
     title: "Full Stack Web Development",
     description:
-      "Building responsive website frontend using raw design and frameworks, I implemented secure access to the database. Additionally, I created application backends on various platforms utilizing different frameworks such as MVC5 and raw coding, while leveraging RESTful principles for efficient data exchange and scalability.",
+      "I build responsive React and Next.js frontends and secure APIs with .NET Core, FastAPI and Node.js, from insurance platforms in Canada to business software in Bangladesh.",
   },
   {
     id: "exp-ml",
     icon: "code",
-    title: "Machine Learning",
+    title: "Machine Learning & Medical Imaging",
     description:
-      "With expertise in machine learning, I specialize in developing and deploying neural network models for diverse applications. Notably, I've worked on projects involving detecting cricketing activities from images and implementing facial recognition systems with high accuracy and efficiency.",
+      "I train and test deep learning models for medical images, like 3D brain tumour segmentation, and explain model decisions with tools like SHAP.",
   },
   {
-    id: "exp-uiux",
-    icon: "presentation",
-    title: "UI/UX",
+    id: "exp-devops",
+    icon: "pipeline",
+    title: "DevOps & Secure CI/CD",
     description:
-      "Crafting visually engaging UI/UX designs for web applications, I specialize in seamlessly integrating brand identity into every aspect. With expertise in creating intuitive application flows, I optimize user experience across platforms, ensuring maximum engagement, satisfaction, and impact.",
+      "I build pipelines that test, scan and ship code automatically, with Docker, Jenkins, GitLab CI/CD and security gates like Snyk.",
   },
 ];
 
 export const proficiencyGroups = [
-  // ← new block starts here
   {
     id: "lang",
-    title: "Language / Framework",
+    title: "Languages & Frameworks",
     items: [
       { name: "React", level: 90 },
-      { name: "Next.js", level: 70 },
       { name: "JavaScript", level: 80 },
       { name: "TypeScript", level: 70 },
+      { name: "Next.js", level: 70 },
       { name: "Redux", level: 70 },
-      { name: ".NET Core", level: 70 },
+      { name: "Python", level: 80 },
       { name: "C#", level: 80 },
-      { name: "SQL", level: 80 },
-      { name: "CSS / SASS", level: 80 },
+      { name: ".NET Core", level: 70 },
+      { name: "FastAPI", level: 75 },
       { name: "Node.js", level: 40 },
     ],
   },
   {
-    id: "tools",
-    title: "Development Tools",
+    id: "ml",
+    title: "Machine Learning",
+    items: [
+      { name: "PyTorch", level: 75 },
+      { name: "nnU-Net", level: 75 },
+      { name: "Pandas / NumPy", level: 80 },
+      { name: "scikit-learn", level: 75 },
+      { name: "XGBoost", level: 70 },
+      { name: "SHAP", level: 70 },
+    ],
+  },
+  {
+    id: "devops",
+    title: "DevOps & Cloud",
     items: [
       { name: "Git", level: 80 },
-      { name: "Azure Services", level: 70 },
-      { name: "Docker", level: 60 },
-      { name: "VS Code", level: 95 },
-      { name: "Visual Studio", level: 80 },
+      { name: "Docker", level: 70 },
+      { name: "Jenkins", level: 65 },
+      { name: "GitLab CI/CD", level: 65 },
+      { name: "Azure", level: 60 },
+      { name: "AWS", level: 40 },
+    ],
+  },
+  {
+    id: "tools",
+    title: "Databases & Tools",
+    items: [
       { name: "MS SQL Server", level: 90 },
       { name: "MySQL", level: 70 },
-      { name: "Firebase", level: 60 },
+      { name: "PostgreSQL", level: 65 },
       { name: "MongoDB", level: 60 },
+      { name: "VS Code", level: 95 },
+      { name: "Visual Studio", level: 80 },
     ],
   },
 ];
@@ -378,41 +583,87 @@ export const footer = {
 };
 
 export const roles = [
-  "Software Developer",
+  "Software Engineer",
   "Machine Learning Enthusiast",
   "Researcher",
   "Computer Science Graduate",
-  "Full-Stack Engineer",
+  // "Full-Stack Engineer",
 ];
 
 export const parallaxSection = {
-  statement: "Turning Ideas Into Scalable Solutions",
+  statement: "BUILDING SOFTWARE. ADVANCING AI.",
   stats: [
-    { label: "Years Experience", value: "3+" },
-    { label: "Projects Delivered", value: "9+" },
-    { label: "Companies", value: "3" },
+    { label: "Years in Industry", value: "2.5+" },
+    { label: "Projects Built", value: "20+" },
+    { label: "Companies", value: "2" },
     { label: "Published Paper", value: "1" },
   ],
 };
 
+// News page. Newest first.
 export const news = [
   {
-    id: "news2",
+    id: "news8",
     date: "Nov 2026",
     text: [
-      "Presented our final Master's project: a 3D nnU-Net brain tumour segmentation model, integrated into our web platform NeuroVision AI.",
+      "Presented my Master's project at Curtin University: ",
+      {
+        label: "NeuroVision AI",
+        href: "https://github.com/AhnafIfti/Web-Platform-for-Brain-Tumor-Detection-and-Predictive-Outcome-Modeling",
+      },
+      ", a web platform that segments brain tumours in 3D MRI using our final nnU-Net model.",
     ],
   },
   {
-    id: "news1",
-    date: "Dec 2021",
+    id: "news7",
+    date: "Feb 2025",
     text: [
-      "Our paper on ",
+      "Started my Master of Computing (Computer Science) at Curtin University, Perth, Australia.",
+    ],
+  },
+  {
+    id: "news6",
+    date: "Nov 2022",
+    text: [
+      "Joined CodeExcel as a Software Developer, working remotely on projects for the Insurance Bureau of Canada.",
+    ],
+  },
+  {
+    id: "news5",
+    date: "Mar 2022",
+    text: [
+      "Joined ADN DigiNet as a full-time Software Engineer after completing my internship.",
+    ],
+  },
+  {
+    id: "news4",
+    date: "2022",
+    text: [
+      "Our paper ",
       {
         label: "Detection of Cricketing Activities using Deep Learning",
         href: "https://ieeexplore.ieee.org/document/9707392",
       },
-      " was presented at TENCON 2021 (IEEE Region 10 Conference).",
+      " was published in the IEEE TENCON 2021 proceedings on IEEE Xplore.",
+    ],
+  },
+  {
+    id: "news3",
+    date: "Dec 2021",
+    text: [
+      "Presented our paper on detecting cricketing activities with deep learning at IEEE TENCON 2021 (Auckland, New Zealand).",
+    ],
+  },
+  {
+    id: "news2",
+    date: "Dec 2021",
+    text: ["Joined ADN DigiNet in Dhaka as a Software Engineering Intern."],
+  },
+  {
+    id: "news1",
+    date: "Jan 2021",
+    text: [
+      "Graduated with a BSc in Computer Science and Engineering from Ahsanullah University of Science and Technology (AUST), Dhaka.",
     ],
   },
 ];
@@ -434,22 +685,148 @@ export const contact = {
     {
       name: "GitLab",
       icon: "gitlab",
-      href: "https://gitlab.com/YOUR_USERNAME",
+      href: "https://gitlab.com/Ahnaf.Ifti",
     },
     {
       name: "Google Scholar",
       icon: "scholar",
-      href: "https://scholar.google.com/citations?user=YOUR_ID",
+      href: "https://scholar.google.com/citations?user=O_uKdUIAAAAJ&hl=en",
     },
     {
       name: "ResearchGate",
       icon: "researchgate",
-      href: "https://www.researchgate.net/profile/YOUR_NAME",
+      href: "https://www.researchgate.net/profile/Ahnaf-Shahriar-3",
     },
     {
       name: "Kaggle",
       icon: "kaggle",
-      href: "https://www.kaggle.com/YOUR_USERNAME",
+      href: "https://www.kaggle.com/ahnafshahriarifti",
     },
   ],
 };
+
+// ---------- Research page ----------
+export const researchStatement =
+  "I am interested in how deep learning can help clinicians read medical images faster and more consistently. My work so far focuses on segmenting brain tumours in 3D MRI and explaining model decisions. Next, I want to explore methods that track changes across scans and learn well from limited labelled data.";
+
+export const researchInterests = {
+  current: [
+    {
+      title: "Medical Image Segmentation",
+      text: "Finding exact tumour regions in 3D scans. I want to make segmentation more reliable on scans from new hospitals and scanners.",
+      evidence: "NeuroVision AI",
+    },
+    {
+      title: "Computer Vision in Medical Imaging",
+      text: "Building models that work on real multi-modal MRI, from preprocessing to deployment. I want to bring these models closer to real clinical use.",
+      evidence: "NeuroVision AI",
+    },
+    {
+      title: "Image Classification",
+      text: "Designing and comparing CNNs for image recognition. I want to apply this to diagnosis tasks such as tumour grading.",
+      evidence: "Cricket Activity Detection (IEEE TENCON 2021)",
+    },
+    {
+      title: "Explainable AI for Healthcare",
+      text: "Using SHAP, PDP and ALE to show why a model makes a decision. I want to extend this to deep learning models for medical images.",
+      evidence: "Fetal Health Classification · Parkinson's Severity",
+    },
+  ],
+  next: [
+    {
+      title: "Image Registration",
+      text: "Aligning scans taken at different times, so tumour growth and treatment response can be tracked.",
+    },
+    {
+      title: "Generative Modeling",
+      text: "Creating realistic synthetic scans to help models learn when labelled medical data is limited.",
+    },
+  ],
+};
+
+export const researchExperience = [
+  {
+    id: "res1",
+    badge: "Master's thesis",
+    title:
+      "Web Platform for Brain Tumour Segmentation and Predictive Outcome Modelling",
+    meta: [
+      { label: "Institution", value: "Curtin University, Perth" },
+      {
+        label: "Supervisor",
+        value: "Dr Chayan Mondal, Associate Lecturer, AI and Data Science",
+      },
+      { label: "Period", value: "2026" },
+      { label: "My role", value: "Deep learning models and web platform" },
+    ],
+    summary:
+      "Outlining brain tumours by hand in MRI is slow and varies between experts. We built a system that segments tumours automatically in 3D MRI and shows the results in a web platform.",
+    contributions: [
+      "Developed and benchmarked 2D, 2.5D and 3D segmentation models on the BraTS multi-modal MRI datasets.",
+      "Designed and ran a 3D nnU-Net ablation study (loss, augmentation, patch sampling and post-processing), then combined the best settings into a final model.",
+      "Compared the final model's Dice scores with published results, and tested it on 219 unseen BraTS 2023 validation patients.",
+      "Integrated the model into NeuroVision AI, our Django platform with slice-by-slice views and PDF reports.",
+    ],
+    stats: [
+      { value: "0.92", label: "Mean validation Dice" },
+      { value: "0.90", label: "Enhancing tumour" },
+      { value: "0.92", label: "Tumour core" },
+      { value: "0.94", label: "Whole tumour" },
+    ],
+    methods: [
+      "nnU-Net v2",
+      "Residual Encoder U-Net",
+      "Ablation study",
+      "BraTS 2021 / 2023",
+      "PyTorch",
+      "Django",
+    ],
+    links: [
+      {
+        label: "View Repository",
+        href: "https://github.com/AhnafIfti/Web-Platform-for-Brain-Tumor-Detection-and-Predictive-Outcome-Modeling",
+      },
+    ],
+  },
+  {
+    id: "res2",
+    badge: "Bachelor's thesis",
+    title: "Detection of Cricketing Activities using Deep Learning",
+    meta: [
+      {
+        label: "Institution",
+        value: "Ahsanullah University of Science and Technology, Dhaka",
+      },
+      {
+        label: "Supervisor",
+        value: "Shoeb Mohammad Shahriar, Assistant Professor, Dept. of CSE",
+      },
+      { label: "Period", value: "2020 – 2021" },
+      { label: "My role", value: "Model design and experiments" },
+    ],
+    summary:
+      "Recognising cricket shots automatically can support match analysis and coaching. We trained deep CNNs to classify cricket activities from images.",
+    contributions: [
+      "Implemented a custom ResNet50 trained with the One Cycle Policy for faster, more stable training.",
+      "Built four other CNNs (ResNet34, ResNet101, VGG16 with Batch Normalization and AlexNet) for comparison.",
+      "Published the work at IEEE TENCON 2021.",
+    ],
+    stats: [
+      { value: "99.47%", label: "Test accuracy" },
+      { value: "5", label: "CNN models compared" },
+      { value: "5", label: "Cites in Papers" },
+      { value: "IEEE", label: "TENCON 2021" },
+    ],
+    methods: ["PyTorch", "ResNet50", "VGG16", "AlexNet"],
+    links: [
+      {
+        label: "View Repository",
+        href: "https://github.com/AhnafIfti/Detection-of-Cricketing-Activities-using-Deep-Learning",
+      },
+      {
+        label: "Read Paper",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+    ],
+  },
+];

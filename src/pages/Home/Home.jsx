@@ -32,7 +32,7 @@ export default function Home() {
       <AboutSummary
         image="about-photo.jpg"
         alt={site.name}
-        text={site.tagline}
+        text={site.whatIDo}
       />
     </>
   );
