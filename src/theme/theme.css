@@ -88,6 +88,18 @@
   --breakpoint-xl: 1200px; /* desktops */
 }
 
+/* ---- Keep the footer at the bottom on short pages ---- */
+#root {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root > main {
+  flex: 1 0 auto;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -150,12 +162,12 @@ button {
   width: 100%;
   max-width: var(--max-width-container);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding-inline: var(--space-md); /* 24px */
 }
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 var(--space-sm);
+    padding-inline: 1.25rem; /* 20px on tablets */
   }
 }
 
@@ -166,10 +178,9 @@ button {
   }
 
   .container {
-    padding: 0 var(--space-xs);
+    padding-inline: 1.25rem; /* 20px on phones (was 8px) */
   }
 }
-
 .gradient-text {
   background: linear-gradient(
     0deg,

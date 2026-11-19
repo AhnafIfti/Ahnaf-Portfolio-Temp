@@ -16,7 +16,7 @@ export default function Projects() {
   }, [activeCategory]);
 
   return (
-    <section className="page-section">
+    <section className="page-section--tight">
       <div className="container">
         <SectionHeading title="Projects" />
         <ProjectFilter

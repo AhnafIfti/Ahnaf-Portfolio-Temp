@@ -1,13 +1,104 @@
+/* ---- Top: expertise cards ---- */
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-md);
 }
 
-/* Responsive: single column on phones */
+/* ---- Thin line between sections ---- */
+.expertise-divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: var(--space-xl) 0;
+}
+
+/* ---- Skill groups ---- */
+.proficiency-group__title {
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+}
+
+/* Two columns. Items fill the LEFT column first, then the right,
+   so the order in content.js reads top-to-bottom. */
+.proficiency-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(var(--rows), auto);
+  column-gap: 4rem;
+  row-gap: 1.25rem;
+}
+
+.proficiency-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.proficiency-item__name {
+  flex: none;
+  width: 150px;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.proficiency-item__track {
+  flex: 1;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: #3a3a3a;
+  overflow: hidden;
+}
+
+.proficiency-item__fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  transform-origin: left;
+  animation: proficiency-grow 1s ease-out;
+}
+
+/* Bars grow from left when the page opens */
+@keyframes proficiency-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* No animation for people who turn off motion in their system settings */
+@media (prefers-reduced-motion: reduce) {
+  .proficiency-item__fill {
+    animation: none;
+  }
+}
+
+/* ---- Tablet & phone: one column ---- */
+@media (max-width: 768px) {
+  .proficiency-list {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+}
+
 @media (max-width: 576px) {
   .expertise-grid {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
+  }
+
+  .expertise-divider {
+    margin: var(--space-lg) 0;
+  }
+
+  .proficiency-item__name {
+    width: 120px;
   }
 }

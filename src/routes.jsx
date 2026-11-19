@@ -7,7 +7,7 @@ import Experience from "./pages/Experience/Experience";
 import Education from "./pages/Education/Education";
 import Publications from "./pages/Publications/Publications";
 import Expertise from "./pages/Expertise/Expertise";
-import Skills from "./pages/Skills/Skills";
+import News from "./pages/News/News";
 import Contact from "./pages/Contact/Contact";
 import NotFound from "./pages/NotFound/NotFound";
 
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       { path: "education", element: <Education /> },
       { path: "publications", element: <Publications /> },
       { path: "expertise", element: <Expertise /> },
-      { path: "skills", element: <Skills /> },
+      { path: "news", element: <News /> },
       { path: "contact", element: <Contact /> },
       { path: "*", element: <NotFound /> },
     ],

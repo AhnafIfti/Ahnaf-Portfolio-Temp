@@ -30,9 +30,9 @@ export const navLinks = [
   { label: "Projects", path: "/projects" },
   { label: "Experience", path: "/experience" },
   { label: "Education", path: "/education" },
-  { label: "Publications", path: "/publications" },
+  { label: "Research", path: "/publications" },
   { label: "Expertise", path: "/expertise" },
-  { label: "Skills", path: "/skills" },
+  { label: "News", path: "/news" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -261,6 +261,7 @@ export const publications = [
     title: "Detection of Cricketing Activities using Deep Learning",
     venue: "TENCON 2021 IEEE Region 10 Conference, 2021",
     href: "https://ieeexplore.ieee.org/document/9707392",
+    date: "May 2013",
   },
 ];
 
@@ -285,6 +286,41 @@ export const expertise = [
     title: "UI/UX",
     description:
       "Crafting visually engaging UI/UX designs for web applications, I specialize in seamlessly integrating brand identity into every aspect. With expertise in creating intuitive application flows, I optimize user experience across platforms, ensuring maximum engagement, satisfaction, and impact.",
+  },
+];
+
+export const proficiencyGroups = [
+  // ← new block starts here
+  {
+    id: "lang",
+    title: "Language / Framework",
+    items: [
+      { name: "React", level: 90 },
+      { name: "Next.js", level: 70 },
+      { name: "JavaScript", level: 80 },
+      { name: "TypeScript", level: 70 },
+      { name: "Redux", level: 70 },
+      { name: ".NET Core", level: 70 },
+      { name: "C#", level: 80 },
+      { name: "SQL", level: 80 },
+      { name: "CSS / SASS", level: 80 },
+      { name: "Node.js", level: 40 },
+    ],
+  },
+  {
+    id: "tools",
+    title: "Development Tools",
+    items: [
+      { name: "Git", level: 80 },
+      { name: "Azure Services", level: 70 },
+      { name: "Docker", level: 60 },
+      { name: "VS Code", level: 95 },
+      { name: "Visual Studio", level: 80 },
+      { name: "MS SQL Server", level: 90 },
+      { name: "MySQL", level: 70 },
+      { name: "Firebase", level: 60 },
+      { name: "MongoDB", level: 60 },
+    ],
   },
 ];
 
@@ -327,15 +363,15 @@ export const skillGroups = [
   },
 ];
 
-export const contact = {
-  email: "ahnafshahriarifti@gmail.com",
-  phone: "+8801312414116",
-  address: ["17/3, Maricha Garden", "East Razabazar", "Farmgate, Dhaka"],
-  // Formspree endpoint for the working contact form. Sign up free at
-  // https://formspree.io, create a form, and paste its endpoint below.
-  // Until this is set, the form falls back to a mailto: link.
-  formEndpoint: "", // e.g. 'https://formspree.io/f/xxxxxxx'
-};
+// export const contact = {
+//   email: "ahnafshahriarifti@gmail.com",
+//   phone: "+61480631521",
+//   address: ["Perth, Western Australia", "Australia"],
+//   // Formspree endpoint for the working contact form. Sign up free at
+//   // https://formspree.io, create a form, and paste its endpoint below.
+//   // Until this is set, the form falls back to a mailto: link.
+//   formEndpoint: "", // e.g. 'https://formspree.io/f/xxxxxxx'
+// };
 
 export const footer = {
   copyrightName: "Ahnaf Shahriar Ifti",
@@ -356,5 +392,64 @@ export const parallaxSection = {
     { label: "Projects Delivered", value: "9+" },
     { label: "Companies", value: "3" },
     { label: "Published Paper", value: "1" },
+  ],
+};
+
+export const news = [
+  {
+    id: "news2",
+    date: "Nov 2026",
+    text: [
+      "Presented our final Master's project: a 3D nnU-Net brain tumour segmentation model, integrated into our web platform NeuroVision AI.",
+    ],
+  },
+  {
+    id: "news1",
+    date: "Dec 2021",
+    text: [
+      "Our paper on ",
+      {
+        label: "Detection of Cricketing Activities using Deep Learning",
+        href: "https://ieeexplore.ieee.org/document/9707392",
+      },
+      " was presented at TENCON 2021 (IEEE Region 10 Conference).",
+    ],
+  },
+];
+
+export const contact = {
+  email: "ahnafshahriarifti@gmail.com",
+  phone: "+61480631521", // used for the tap-to-call link (no spaces)
+  phoneDisplay: "+61 480 631 521", // what people see
+  location: "Perth, Western Australia",
+  gmailUrl:
+    "https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=ahnafshahriarifti@gmail.com&su=Hello%20from%20your%20portfolio",
+  accounts: [
+    { name: "GitHub", icon: "github", href: "https://github.com/AhnafIfti" },
+    {
+      name: "LinkedIn",
+      icon: "linkedin",
+      href: "https://www.linkedin.com/in/ahnaf-shahriar-ifti-9b1408162/",
+    },
+    {
+      name: "GitLab",
+      icon: "gitlab",
+      href: "https://gitlab.com/YOUR_USERNAME",
+    },
+    {
+      name: "Google Scholar",
+      icon: "scholar",
+      href: "https://scholar.google.com/citations?user=YOUR_ID",
+    },
+    {
+      name: "ResearchGate",
+      icon: "researchgate",
+      href: "https://www.researchgate.net/profile/YOUR_NAME",
+    },
+    {
+      name: "Kaggle",
+      icon: "kaggle",
+      href: "https://www.kaggle.com/YOUR_USERNAME",
+    },
   ],
 };

@@ -1,0 +1,49 @@
+.news-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Date on the left, text on the right */
+.news-item {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  column-gap: var(--space-lg);
+  align-items: baseline;
+}
+
+.news-item__date {
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+.news-item__text {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.news-item__text a {
+  color: var(--color-accent);
+}
+
+.news-item__text a:hover {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+
+/* Phones: date goes above the text */
+@media (max-width: 576px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    row-gap: 0.25rem;
+  }
+
+  .news-item__date {
+    color: var(--color-accent);
+    font-size: var(--font-size-sm);
+  }
+}

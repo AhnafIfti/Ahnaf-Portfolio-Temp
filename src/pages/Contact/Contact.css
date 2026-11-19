@@ -1,44 +1,160 @@
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: var(--space-lg);
-  align-items: start;
+/* Two columns: intro on the left, card on the right */
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xl);
 }
 
-.contact-details {
-  list-style: none;
-  padding: 0;
+.contact__intro,
+.contact__card {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+/* ---- Left side ---- */
+.contact__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.contact__eyebrow {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.contact__headline {
   margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.contact__highlight {
+  color: var(--color-accent);
+}
+
+.contact__gmail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 48px;
+  padding: 0 1.5rem;
+  margin-top: var(--space-xs);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.contact__gmail:hover {
+  background: var(--color-accent-dark);
+  color: var(--color-text-on-accent);
+  transform: translateY(-2px);
+}
+
+.contact__gmail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #ea4335;
+}
+
+/* ---- Right side: card ---- */
+.contact__card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact__details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
 }
 
-.contact-details li {
+.contact__detail {
   display: flex;
-  gap: var(--space-sm);
   align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.contact__detail-icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.contact__detail-text a,
+.contact__detail-text span:not(.contact__label) {
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+.contact__detail-text a:hover {
   color: var(--color-accent);
 }
 
-.contact-details__label {
-  display: block;
+.contact__label {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
   color: var(--color-text-faint);
-  margin-bottom: 0.2rem;
 }
 
-.contact-details a,
-.contact-details span:not(.contact-details__label) {
-  color: var(--color-text-muted);
+.contact__divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: var(--space-sm) 0;
 }
 
-/* Responsive: stack the form above the details panel on tablets/phones
-   instead of side-by-side */
-@media (max-width: 800px) {
-  .contact-layout {
-    grid-template-columns: 1fr;
+/* Round social icons (styles come from SocialLinks.css).
+   Line them up on the left inside the card, and wrap on small screens. */
+.contact__socials {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ---- Phones ---- */
+@media (max-width: 576px) {
+  .contact {
+    gap: var(--space-lg);
+  }
+
+  .contact__card {
+    padding: var(--space-md);
   }
 }
