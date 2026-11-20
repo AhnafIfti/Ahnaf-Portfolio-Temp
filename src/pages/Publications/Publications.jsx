@@ -134,7 +134,7 @@ export default function Publications() {
       {/* Section 2: Research Interest and Experience */}
       <section className="page-section--tight research-section">
         <div className="container">
-          <SectionHeading title="Research Interest and Experience" />
+          <SectionHeading title="Research Experience and Interest" />
 
           <p className="research-statement">{researchStatement}</p>
 
