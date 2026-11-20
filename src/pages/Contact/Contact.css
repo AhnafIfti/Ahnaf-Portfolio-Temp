@@ -71,6 +71,15 @@
   color: #ea4335;
 }
 
+.contact__gmail:link,
+.contact__gmail:visited,
+.contact__gmail:focus,
+.contact__gmail:active {
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  opacity: 1;
+}
+
 /* ---- Right side: card ---- */
 .contact__card {
   background: var(--color-bg-elevated);

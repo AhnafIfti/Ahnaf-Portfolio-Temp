@@ -34,6 +34,15 @@
   transform: translateY(-1px);
 }
 
+.btn-primary:link,
+.btn-primary:visited,
+.btn-primary:focus,
+.btn-primary:active {
+  background: var(--color-accent);
+  color: var(--color-text-on-accent);
+  opacity: 1;
+}
+
 .btn-outline {
   background: transparent;
   color: var(--color-accent);

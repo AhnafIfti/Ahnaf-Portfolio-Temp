@@ -27,6 +27,26 @@ export const socialLinks = [
     href: "https://www.facebook.com/ahnaf.shahriar.ifti",
     icon: "facebook",
   },
+  {
+    label: "GitLab",
+    icon: "gitlab",
+    href: "https://gitlab.com/Ahnaf.Ifti",
+  },
+  {
+    label: "Google Scholar",
+    icon: "scholar",
+    href: "https://scholar.google.com/citations?user=O_uKdUIAAAAJ&hl=en",
+  },
+  {
+    label: "ResearchGate",
+    icon: "researchgate",
+    href: "https://www.researchgate.net/profile/Ahnaf-Shahriar-3",
+  },
+  {
+    label: "Kaggle",
+    icon: "kaggle",
+    href: "https://www.kaggle.com/ahnafshahriarifti",
+  },
 ];
 
 export const navLinks = [
@@ -701,6 +721,11 @@ export const contact = {
       name: "Kaggle",
       icon: "kaggle",
       href: "https://www.kaggle.com/ahnafshahriarifti",
+    },
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/ahnaf.shahriar.ifti",
+      icon: "facebook",
     },
   ],
 };

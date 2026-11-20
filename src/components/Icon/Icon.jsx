@@ -1,5 +1,19 @@
 // Small inline SVG icon set — avoids pulling in an external icon font
 // just for a handful of glyphs used across the site.
+import {
+  SiGitlab,
+  SiGooglescholar,
+  SiResearchgate,
+  SiKaggle,
+} from "react-icons/si";
+
+// Brand icons that are not in the inline set below
+const brandIcons = {
+  gitlab: SiGitlab,
+  scholar: SiGooglescholar,
+  researchgate: SiResearchgate,
+  kaggle: SiKaggle,
+};
 const paths = {
   linkedin:
     "M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z",
@@ -30,6 +44,18 @@ const paths = {
 };
 
 export default function Icon({ name, size = 20, className = "", title }) {
+  const Brand = brandIcons[name];
+  if (Brand) {
+    return (
+      <Brand
+        size={size}
+        className={className}
+        title={title}
+        aria-hidden={title ? undefined : true}
+      />
+    );
+  }
+
   const d = paths[name];
   if (!d) return null;
   return (

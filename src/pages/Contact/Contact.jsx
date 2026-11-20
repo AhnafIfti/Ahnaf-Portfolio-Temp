@@ -5,6 +5,7 @@ import {
   FaGitlab,
   FaResearchgate,
   FaKaggle,
+  FaFacebook,
 } from "react-icons/fa";
 import { SiGooglescholar, SiGmail } from "react-icons/si";
 import Icon from "../../components/Icon/Icon";
@@ -20,6 +21,7 @@ const accountIcons = {
   scholar: SiGooglescholar,
   researchgate: FaResearchgate,
   kaggle: FaKaggle,
+  facebook: FaFacebook,
 };
 
 export default function Contact() {
