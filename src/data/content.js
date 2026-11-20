@@ -657,7 +657,7 @@ export const news = [
   },
   {
     id: "news4",
-    date: "2022",
+    date: "April 2022",
     text: [
       "Our paper ",
       {
