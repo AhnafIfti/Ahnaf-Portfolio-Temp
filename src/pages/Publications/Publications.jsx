@@ -138,6 +138,16 @@ export default function Publications() {
 
           <p className="research-statement">{researchStatement}</p>
 
+          {/* Experience */}
+          <h3 className="research-subtitle">Research Experience</h3>
+          <div className="research-cards">
+            {researchExperience.map((item) => (
+              <ResearchCard key={item.id} item={item} />
+            ))}
+          </div>
+
+          <hr className="research-divider" />
+
           {/* Interests */}
           <h3 className="research-subtitle">Research Interests</h3>
           <div className="interests">
@@ -159,16 +169,6 @@ export default function Publications() {
                 ))}
               </ul>
             </div>
-          </div>
-
-          <hr className="research-divider" />
-
-          {/* Experience */}
-          <h3 className="research-subtitle">Research Experience</h3>
-          <div className="research-cards">
-            {researchExperience.map((item) => (
-              <ResearchCard key={item.id} item={item} />
-            ))}
           </div>
         </div>
       </section>

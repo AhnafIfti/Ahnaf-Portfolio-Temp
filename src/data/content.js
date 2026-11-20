@@ -6,7 +6,7 @@ export const site = {
   tagline:
     "Full-stack developer and ML researcher with 2.5+ years of experience building software for companies in Bangladesh and Canada. I build web apps with React, Next.js, .NET and FastAPI, train deep learning models for medical imaging, and set up secure CI/CD pipelines with Docker and Jenkins. I recently completed my Master of Computing at Curtin University.",
   resumeUrl:
-    "https://drive.google.com/file/d/1SZKeLupboWU5X--_7l5H9DoIJVGcG8d3/view?usp=sharing",
+    "https://drive.google.com/file/d/1fz1VM2pwrFPSEK-GPziQGu6k1YIVStOg/view?usp=sharing",
   whatIDo:
     "I work across three areas: building software, AI research, and shipping code safely. As a developer, I built insurance platforms for the Insurance Bureau of Canada and an AI-driven business platform ADN DigiNet in Bangladesh, using React, Next.js, .NET and FastAPI. As a researcher, I published a deep learning paper at IEEE TENCON 2021. For my Master's thesis, I built a 3D brain tumour segmentation model and brought it into a working web platform with 3D tumour views. On the DevOps side, I build CI/CD pipelines with Docker, Jenkins and GitLab that test, scan and deploy code automatically. I am open to software engineering roles and PhD opportunities in medical image analysis, computer vision and explainable AI.",
 };
